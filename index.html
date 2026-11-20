@@ -1,91 +1,419 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cloud and DevOps Internship</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#17283F">
+  <meta name="description" content="Cloud and DevOps Internship team and deployment project.">
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f6f8;
-            margin: 0;
-            padding: 40px;
-        }
+  <title>Cloud & DevOps | Our Team</title>
 
-        .container {
-            max-width: 700px;
-            margin: auto;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
-        h1 {
-            text-align: center;
-            color: #0d6efd;
-        }
+  <style>
+    :root {
+      --beige: #EDE4D3;
+      --cream: #F8F5EE;
+      --navy: #17283F;
+      --olive: #737B4B;
+      --muted: #77786F;
+      --white: #FFFFFF;
+    }
 
-        h2 {
-            margin-top: 30px;
-            color: #333;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        ul {
-            list-style-type: square;
-            padding-left: 25px;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        li {
-            font-size: 18px;
-            padding: 8px 0;
-        }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--navy);
+      line-height: 1.7;
+    }
 
-        footer {
-            margin-top: 30px;
-            text-align: center;
-            color: gray;
-            font-size: 14px;
-        }
+    /* Navigation */
 
-        .note {
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #eef6ff;
-            border-left: 4px solid #0d6efd;
-        }
-    </style>
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 8%;
+      border-bottom: 1px solid rgba(23,40,63,0.1);
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 17px;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: var(--olive);
+    }
+
+    .nav-tag {
+      font-size: 12px;
+      color: var(--olive);
+      border: 1px solid var(--olive);
+      padding: 5px 14px;
+      border-radius: 30px;
+      font-weight: 600;
+    }
+
+    /* Hero */
+
+    .hero {
+      padding: 95px 8% 85px;
+      background: var(--beige);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border: 1px solid rgba(115,123,75,0.25);
+      border-radius: 50%;
+      right: -100px;
+      top: -100px;
+    }
+
+    .eyebrow {
+      color: var(--olive);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: 1.13;
+      max-width: 750px;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 span {
+      color: var(--olive);
+      font-style: italic;
+    }
+
+    .hero p {
+      max-width: 570px;
+      color: #56594F;
+      font-size: 16px;
+    }
+
+    .hero-button {
+      display: inline-block;
+      margin-top: 30px;
+      background: var(--navy);
+      color: white;
+      padding: 13px 25px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .hero-button:hover {
+      background: var(--olive);
+      transform: translateY(-3px);
+    }
+
+    /* Main sections */
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 75px 7%;
+    }
+
+    .section-label {
+      color: var(--olive);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 38px;
+      margin: 8px 0 12px;
+    }
+
+    .section-description {
+      color: var(--muted);
+      max-width: 550px;
+      margin-bottom: 35px;
+    }
+
+    /* Team cards */
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .team-card {
+      background: var(--white);
+      padding: 30px 24px;
+      border: 1px solid rgba(23,40,63,0.08);
+      border-radius: 10px;
+      transition: 0.3s ease;
+    }
+
+    .team-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(23,40,63,0.08);
+    }
+
+    .member-number {
+      width: 42px;
+      height: 42px;
+      background: var(--beige);
+      color: var(--olive);
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      font-weight: 800;
+      margin-bottom: 22px;
+    }
+
+    .team-card h3 {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .team-card p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* Deployment section */
+
+    .deployment {
+      background: var(--navy);
+      color: white;
+      padding: 45px;
+      border-radius: 12px;
+      margin-top: 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+      align-items: center;
+    }
+
+    .deployment .section-label {
+      color: #B8C08D;
+    }
+
+    .deployment h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      margin: 10px 0 15px;
+    }
+
+    .deployment p {
+      color: #D2D8DF;
+      font-size: 14px;
+    }
+
+    .steps {
+      display: grid;
+      gap: 12px;
+    }
+
+    .step {
+      background: rgba(255,255,255,0.08);
+      padding: 13px 16px;
+      border-radius: 6px;
+      font-size: 13px;
+      border-left: 3px solid #A5AD77;
+    }
+
+    .step strong {
+      color: #D4DAB2;
+      margin-right: 8px;
+    }
+
+    /* Note */
+
+    .note {
+      margin-top: 25px;
+      padding: 22px;
+      background: #E9EBD9;
+      border-left: 4px solid var(--olive);
+      border-radius: 5px;
+      color: #424A32;
+      font-size: 14px;
+    }
+
+    /* Footer */
+
+    footer {
+      text-align: center;
+      padding: 30px 15px;
+      background: var(--beige);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    footer strong {
+      color: var(--navy);
+    }
+
+    /* Responsive */
+
+    @media (max-width: 700px) {
+      nav {
+        padding: 18px 6%;
+      }
+
+      .hero {
+        padding: 70px 7%;
+      }
+
+      main {
+        padding: 55px 6%;
+      }
+
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .deployment {
+        grid-template-columns: 1fr;
+        padding: 28px 22px;
+        margin-top: 55px;
+      }
+
+      .section-title {
+        font-size: 32px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-    <div class="container">
-        <h1>Cloud and DevOps Internship</h1>
+  <nav>
+    <div class="logo">CLOUD<span>.</span>DEVOPS</div>
+    <div class="nav-tag">Internship Project</div>
+  </nav>
 
-        <p>
-            Welcome to our Cloud and DevOps Internship project. This page lists the current team members.
-            Updating this file will automatically trigger the GitHub Actions deployment workflow.
-        </p>
+  <header class="hero">
+    <div class="eyebrow">Learning • Building • Deploying</div>
 
-        <h2>Team Members</h2>
+    <h1>
+      Building the future with
+      <span>Cloud & DevOps.</span>
+    </h1>
 
-        <ul>
-            <li>Pratham P</li>
-            <li>Pratik Vijay</li>
-            <li>Priyanka M</li>
-	    
-        </ul>
+    <p>
+      Welcome to our internship project. We are exploring
+      cloud technologies, automation and modern deployment
+      practices while learning to build and deliver better software.
+    </p>
 
-        <div class="note">
-            <strong>Instructions:</strong> Add or remove names in the list above and commit the changes.
-            The GitHub Actions workflow will automatically deploy the updated website.
+    <a href="#team" class="hero-button">Meet Our Team &nbsp; →</a>
+  </header>
+
+  <main>
+
+    <section id="team">
+      <div class="section-label">The People Behind The Project</div>
+      <h2 class="section-title">Meet Our Team</h2>
+
+      <p class="section-description">
+        A team of aspiring technology enthusiasts learning
+        and working together in the world of Cloud and DevOps.
+      </p>
+
+      <div class="team-grid">
+
+        <div class="team-card">
+          <div class="member-number">01</div>
+          <h3>Pratham P</h3>
+          <p>Cloud & DevOps Intern</p>
         </div>
 
-        <footer>
-            Cloud and DevOps Internship | GitHub Pages Deployment
-        </footer>
+        <div class="team-card">
+          <div class="member-number">02</div>
+          <h3>Pratik Vijay</h3>
+          <p>Cloud & DevOps Intern</p>
+        </div>
+
+        <div class="team-card">
+          <div class="member-number">03</div>
+          <h3>Priyanka M</h3>
+          <p>Cloud & DevOps Intern</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="deployment">
+      <div>
+        <div class="section-label">Automation In Action</div>
+        <h2>From Code to Deployment.</h2>
+
+        <p>
+          This website uses GitHub Actions to automate the
+          deployment process. Whenever the website is updated
+          and changes are pushed to the repository, the workflow
+          automatically publishes the latest version through
+          GitHub Pages.
+        </p>
+      </div>
+
+      <div class="steps">
+        <div class="step"><strong>01</strong> Update the website code</div>
+        <div class="step"><strong>02</strong> Push changes to GitHub</div>
+        <div class="step"><strong>03</strong> GitHub Actions runs the workflow</div>
+        <div class="step"><strong>04</strong> Website gets deployed</div>
+      </div>
+    </section>
+
+    <div class="note">
+      <strong>Want to update the team?</strong><br>
+      Add or remove team members by editing the HTML file
+      and pushing your changes to the main branch.
+      GitHub Actions will automatically deploy the updated website.
     </div>
+
+  </main>
+
+  <footer>
+    <strong>Cloud & DevOps Internship</strong>
+    <br>
+    Built with HTML, GitHub Actions & GitHub Pages.
+    <br>
+    © 2026 | Learning through collaboration.
+  </footer>
 
 </body>
 </html>
-
